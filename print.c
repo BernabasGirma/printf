@@ -49,4 +49,3 @@ int char *format, ...)
 	va_end(ap);
 	return (sum);
 }
-i
