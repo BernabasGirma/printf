@@ -1,4 +1,4 @@
-nclude "main.h"
+#include "main.h"
 
 /**
  *  * check_buffer_overflow - if writing over buffer space,
@@ -9,12 +9,12 @@ nclude "main.h"
  *       */
 int check_buffer_overflow(char *buffer, int len)
 {
-		if (len > 1020)
-				{
-							write(1, buffer, len);
-									len = 0;
-										}
-			return (len);
+	if (len > 1020)
+	{
+		write(1, buffer, len);
+		len = 0;
+	}
+	return (len);
 }
 
 /**
@@ -24,17 +24,17 @@ int check_buffer_overflow(char *buffer, int len)
  *     */
 int _printf(const char *format, ...)
 {
-		int len = 0, total_len = 0, i = 0, j = 0;
-			va_list list;
-				char *buffer, *str;
-					char* (*f)(va_list);
+	int len = 0, total_len = 0, i = 0, j = 0;
+	va_list list;
+	char *buffer, *str;
+	char* (*f)(va_list);
+						
+	if (format == NULL)
+		return (-1);
 
-						if (format == NULL)
-									return (-1);
-
-							buffer = create_buffer();
-								if (buffer == NULL)
-											return (-1);
+		buffer = create_buffer();
+	if (buffer == NULL)
+		return (-1);
 
 									va_start(list, format);
 
